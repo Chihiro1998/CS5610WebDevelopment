@@ -1,0 +1,134 @@
+.projects-container {
+  position: relative;
+  top: 30px;
+  left: 100px;
+  right: 100px;
+  width: calc(100% - 200px);
+  margin: 0 auto;
+  padding: 20px;
+  z-index: 1;
+}
+
+.projects-container h1 {
+  font-size: 2.3rem;
+  color: #ffffff;
+  align-items: left;
+  margin-bottom: 10px;
+}
+
+.project-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 90px);
+  margin: 0 auto 30px auto;
+  background: rgba(255, 255, 255, 0.248);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.project-card img {
+  flex: 1 0 30%;
+  padding-left: 50px;
+  max-width: 300px;
+  object-fit: cover;
+}
+
+.project-info {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+}
+
+.project-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.project-info p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ffffff;
+}
+
+.project-info a {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ffffff;
+}
+
+/* 媒体查询部分 */
+@media (min-width: 768px) {
+  .projects-container {
+    left: 100px;
+    right: 100px;
+    width: calc(100% - 200px); /* 恢复大屏宽度 */
+    padding: 20px;
+  }
+
+  .project-card {
+    flex-direction: row; /* 大屏时恢复水平布局 */
+    align-items: center;
+    width: calc(100% - 90px); /* 恢复宽度 */
+  }
+
+  .project-info {
+    display: block; /* 显示文字内容 */
+    flex: 1;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .project-info p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #ffffff;
+  }
+
+  .project-info a {
+    font-size: 1.2rem;
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-container {
+    left: 5px;
+    right: 5px;
+    width: calc(100% - 10px); /* 极小屏幕下宽度 */
+    padding: 2px;
+  }
+  .container-header h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .container-header p {
+    display: none;
+  }
+
+  .project-info h2 {
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+  }
+  .project-info p {
+    font-size: 1rem;
+    margin-bottom: 2px;
+    line-height: 1;
+  }
+  .project-card img {
+    display: none;
+  }
+
+  .project-info a {
+    font-size: 1rem; /* 减小链接字体 */
+  }
+}

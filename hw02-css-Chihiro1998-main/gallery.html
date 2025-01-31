@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Yuchen Kuang</title>
+  <link rel="stylesheet" href="style/common.css">
+  <link rel="stylesheet" href="style/gallery.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <p>Olivia</p>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="contactme.html">Contact Me</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="gallery-header">
+      <h1>👩‍🎨Gallery</h1>
+      <p>Welcome to my Gallery!
+
+        This space showcases a collection of my past works as a designer. Before embarking on my journey into
+        computer science, I dedicated myself to the art of design, crafting visuals that blend creativity,
+        functionality, and innovation.
+
+        Each piece represents a unique chapter in my creative journey, and I hope it inspires you as much as
+        it inspired me to create it.
+
+        While I now focus on computer science, these designs remain a testament to my artistic roots and a source of
+        constant inspiration. Thank you for visiting and exploring my work!</p>
+    </div>
+
+    <div class="carousel-container">
+      <div class="carousel">
+        <div class="card">
+          <img src="./images/gallery/8.jpg" alt="Card 1">
+          <div class="card-content ">
+            <h3>Tidal flats</h3>
+            <p>Description:The pen drawing records the traces left by water on the beach, which is the shape of the
+              waves. This is an abstract painting about the memory of my hometown.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/gallery/1.jpg" alt="Card 2">
+          <div class="card-content ">
+            <h3>Grape</h3>
+            <p>Description: Traditional Chinese fine brushwork painting records the natural landscape of birds and
+              grapes.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/gallery/2.png" alt="Card 3">
+          <div class="card-content ">
+            <h3>Hospital design</h3>
+            <p>Description:Architecture - Longitudinal traffic flow analysis diagram of hospital design.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/gallery/3.png" alt="Card 4">
+          <div class="card-content ">
+            <h3>Hospital design</h3>
+            <p>Description:Architecture - Architectural renderings display.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/gallery/4.jpg" alt="Card 5">
+          <div class="card-content ">
+            <h3>Hospital design</h3>
+            <p>Description:Architecture - Architectural renderings display of the garden inside.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/gallery/5.jpg" alt="Card 6">
+          <div class="card-content ">
+            <h3>Childhood Dream</h3>
+            <p>Description:A gouache painting about childhood memories, combining dreamy colors and pen strokes.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/gallery/6.jpg" alt="Card 7">
+          <div class="card-content ">
+            <h3>Urban Design</h3>
+            <p>Description:Final aerial view of the urban design</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/gallery/7.png" alt="Card 8">
+          <div class="card-content ">
+            <h3>Hospital design</h3>
+            <p>Description:Hospital design section showing interior space design details</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/gallery/11.jpg" alt="Card 9">
+          <div class="card-content ">
+            <h3>Urban Design</h3>
+            <p>Description:Urban Design Details Technical Indicators</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn prev">&lt;</button>
+      <button class="carousel-btn next">&gt;</button>
+    </div>
+
+    <script>
+      // JavaScript for seamless carousel
+      const carousel = document.querySelector('.carousel');
+      const cards = document.querySelectorAll('.card');
+      const prevBtn = document.querySelector('.carousel-btn.prev');
+      const nextBtn = document.querySelector('.carousel-btn.next');
+
+      let currentIndex = 0;
+
+
+      const firstCard = cards[0].cloneNode(true);
+      const lastCard = cards[cards.length - 1].cloneNode(true);
+
+
+      carousel.appendChild(firstCard);
+      carousel.insertBefore(lastCard, cards[0]);
+
+
+      const totalCards = carousel.children.length;
+
+
+      const cardWidth = cards[0].clientWidth;
+      carousel.style.transform = `translateX(-${cardWidth}px)`;
+      currentIndex = 1;
+
+
+      function moveCarousel(index, smooth = true) {
+        const moveAmount = index * cardWidth;
+        carousel.style.transition = smooth ? 'transform 0.5s ease-in-out' : 'none';
+        carousel.style.transform = `translateX(-${moveAmount}px)`;
+      }
+
+      // Previous button
+      prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex -= 1;
+        } else {
+
+          currentIndex = totalCards - 2;
+          moveCarousel(currentIndex, false);
+          setTimeout(() => moveCarousel(currentIndex - 1), 20);
+          return;
+        }
+        moveCarousel(currentIndex);
+      });
+
+      nextBtn.addEventListener('click', () => {
+        if (currentIndex < totalCards - 1) {
+          currentIndex += 1;
+        } else {
+          currentIndex = 1;
+          moveCarousel(currentIndex, false);
+          setTimeout(() => moveCarousel(currentIndex + 1), 20);
+          return;
+        }
+        moveCarousel(currentIndex);
+      });
+
+
+      moveCarousel(currentIndex);
+    </script>
+  </main>
+
+  <footer>
+    <p>© 2025 Olivia Kwong</p>
+  </footer>
+
+</body>
+
+</html>

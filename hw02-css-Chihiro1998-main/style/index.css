@@ -1,0 +1,109 @@
+main.home {
+  max-width: calc(100% - 200px);
+  margin: 0 auto;
+  padding: 0 100px;
+  z-index: 2;
+}
+
+main.home h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+main.home p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.button-icon-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff6bfd4;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.download-button:hover {
+  transform: scale(1.1);
+}
+
+/* icon style */
+.button-icon-container a i {
+  font-size: 3rem;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.button-icon-container a i:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  main.home {
+    padding: 0 30px;
+  }
+
+  main.home h1 {
+    font-size: 2.5rem;
+  }
+
+  main.home p {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+
+  .button-icon-container {
+    gap: 10px;
+    align-items: left;
+  }
+
+  .download-button {
+    font-size: 1.3rem;
+    padding: 8px 16px;
+  }
+
+  .button-icon-container a i {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main.home {
+    padding: 0 20px;
+  }
+
+  main.home h1 {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  main.home p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .button-icon-container {
+    gap: 15px;
+  }
+
+  .download-button {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+
+  .button-icon-container a i {
+    font-size: 2rem;
+  }
+}
