@@ -1,0 +1,22 @@
+* { padding: 0; margin: 0; }
+canvas { background: #eee; display: block; margin: 0 auto; }
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#startGame {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #0095DD;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#startGame:hover {
+    background-color: #007ACC;
+}
